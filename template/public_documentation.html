@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CorpAPI - Provided By arctil</title>
+        <link type="text/css" href="/static/css/stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <aside id="map">
+            <ul>
+                <li>POST /login</li>
+                <li>GET /user info</li>
+                <li>GET /users</li>
+                <li>GET /user tasks</li>
+                <li>PATCH /task complete</li>
+                <li>GET /documents</li>
+                <li>GET /document download</li>
+            </ul>
+        </aside>
+        <div id="page">
+            <h1>CorpAPI Documentation &amp; Usage</h1>
+            <section id="public-login">
+                <div class="type">POST</div>
+                <input type="text" value="/api/v1/public/login" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "username":"",
+    "password":""
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/public/users" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/public/user/<username>/info" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/public/user/<user_uuid>/tasks" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/public/documents" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/public/document/<document_uuid>/download" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">PATCH</div>
+                <input type="text" value="/api/v1/public/task/<task_uuid>/complete" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <p>CorpAPI - Provided By <a target="_blank" href="https://arctil.com">arctil</a></p>
+        </div>
+    </body>
+</html>

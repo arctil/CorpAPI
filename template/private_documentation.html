@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CorpAPI - Provided By arctil</title>
+        <link type="text/css" href="/static/css/stylesheet.css" rel="stylesheet" />
+    </head>
+    <body>
+        <aside id="map">
+            <ul>
+                <li>POST /login</li>
+                <li>POST /task create</li>
+                <li>DELETE /task</li>
+                <li>GET /tasks list</li>
+                <li>POST /user create</li>
+                <li>PATCH /user reset</li>
+                <li>GET /users list</li>
+                <li>GET /document add</li>
+            </ul>
+        </aside>
+        <div id="page">
+            <h1>CorpAPI Documentation &amp; Usage</h1>
+            <section id="public-login">
+                <div class="type">POST</div>
+                <input type="text" value="/api/v1/private/login" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "username":"",
+    "password":""
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">POST</div>
+                <input type="text" value="/api/v1/private/task/create" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "task_title":"",
+    "task_details":"",
+    "assigned_user":""
+}
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">DELETE</div>
+                <input type="text" value="  /api/v1/private/task/<task_uuid>" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "task_title":"",
+    "task_details":"",
+    "assigned_user":""
+}
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/private/tasks/list" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">POST</div>
+                <input type="text" value="/api/v1/private/user/create" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "username":"",
+    "full_name":"",
+    "age":""
+}
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">PATCH</div>
+                <input type="text" value="  /api/v1/private/user/reset" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "user_uuid":"",
+    "new_password":""
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">DELETE</div>
+                <input type="text" value="  /api/v1/private/user/<user_uuid>" />
+                <div id="api-information">
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">GET</div>
+                <input type="text" value="/api/v1/private/users/list" />
+                <div id="api-information">
+                    <p>Optional Parameters</p>
+                    <pre>
+search
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">POST</div>
+                <input type="text" value="/api/v1/private/document/add" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "document_name":""
+}
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <p class="copy">CorpAPI - Provided By <a target="_blank" href="https://arctil.com">arctil</a></p>
+        </div>
+    </body>
+</html>
