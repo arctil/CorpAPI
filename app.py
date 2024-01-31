@@ -13,6 +13,10 @@ app.register_blueprint(public.public)
 app.register_blueprint(oldpublic.oldpublic)
 app.register_blueprint(oldprivate.oldprivate)
 
+@app.route("/check")
+def default():
+    return {"result":"success", "message":"API is online."}
+
 
 if __name__ == '__main__':
     app.run(debug=True)

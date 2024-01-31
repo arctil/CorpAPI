@@ -1,4 +1,4 @@
-import sqlite3, string, random, time
+import sqlite3, string, random, time, requests
 from .admin_auth import create_token, is_authorized
 from configuration import ConfigurationVariables
 
@@ -156,3 +156,23 @@ def private_list_tasks(token_header):
         results.append({"task_title":row[0], "task_details":row[1], "assigned_user":row[2], "task_uuid":row[3], "task_status":row[4]})
     cursor.close()
     return results
+
+def private_health(data, method):
+    #try:
+    if method == "POST":
+        if "target" in data:
+            test = requests.get(data["target"])
+            return {"result":"success", "statuscode":str(test.status_code)}
+    if method == "GET":
+        #get componants from database...
+        db = connect_database()
+        cursor = db.cursor()
+        results = []
+        for row in cursor.execute("SELECT `componant_uri`,`componant_name` FROM `componants`"):
+            test = requests.get(row[0])
+            results.append({"result":"success", "uri":row[0], "name":row[1], "statuscode":test.status_code})
+        cursor.close()
+        return results
+    #except:
+    #    return {"result":"failed", "message":"Unable to connect."}
+    #return {"result":"failed", "message":"An error occured while trying to connect to remote resourcses."}

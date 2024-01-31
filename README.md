@@ -7,6 +7,7 @@ CorpAPI is a vulnerable by design web API. It has been built to help users impro
 - Arbitrary file read
 - Broken function level authorization
 - SQL injection
+- Server-Side request forgery
 
 #### How To Get Started?
 

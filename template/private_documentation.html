@@ -15,6 +15,7 @@
                 <li>PATCH /user reset</li>
                 <li>GET /users list</li>
                 <li>GET /document add</li>
+                <li>POST | GET /health</li>
             </ul>
         </aside>
         <div id="page">
@@ -141,6 +142,22 @@ Authorization
                     <pre>
 {
     "document_name":""
+}
+                    </pre>
+                    <p>Required Headers</p>
+                    <pre>
+Authorization
+                    </pre>
+                </div>
+            </section>
+            <section id="public-login">
+                <div class="type">POST | GET</div>
+                <input type="text" value="    /api/v1/private/health" />
+                <div id="api-information">
+                    <p>Format: JSON</p>
+                    <pre>
+{
+    "target":""
 }
                     </pre>
                     <p>Required Headers</p>

@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from .actions import private_users_list, private_list_tasks, private_login, generate_uuid, create_private_task, private_create_user, private_document_add, private_delete_task, private_delete_user, private_user_reset, private_document_delete
+from .actions import private_health, private_users_list, private_list_tasks, private_login, generate_uuid, create_private_task, private_create_user, private_document_add, private_delete_task, private_delete_user, private_user_reset, private_document_delete
 
 
 # Defining a blueprint
@@ -122,6 +122,15 @@ def api_private_document_delete(document_uuid):
         return {"result":"failed", "message":"Missing authorization header."}, 403
         
     return private_document_delete(document_uuid, token)
-    
 
-    
+@private.route('/api/v2/private/health', methods=["POST","GET"])
+def api_private_api_health():
+    try:
+        token = request.headers.get("Authorization")
+    except:
+        return {"result":"failed", "message":"Missing authorization header."}, 403
+    try:
+        json = request.json
+    except:
+        json = ""
+    return private_health(json, request.method)
